@@ -42,12 +42,15 @@ var_dump($associativeArray);
 $numbers = range(1, 5);
 var_dump($numbers);
 
+// array_map applies a callback to each element of the array
 $squared = array_map(fn($n) => $n * $n, $numbers);
 var_dump($squared);
 
+// array_filter filters elements based on a condition
 $evenNumbers = array_filter($numbers, fn($n) => $n % 2 === 0);
 var_dump($evenNumbers);
 
+// array_reduce reduces the array to a single value
 $sum = array_reduce($numbers, fn($carry, $n) => $carry + $n, 0);
 var_dump($sum);
 

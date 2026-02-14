@@ -19,6 +19,7 @@ var_dump($numbers, $squared);
 
 
 $message = "Bye";
+// `use` keyword allows the function to access variables from the parent scope
 $greet2 = function ($name) use ($message) {
     $message = $message . "!";
     return "$message, $name!";

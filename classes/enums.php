@@ -29,4 +29,4 @@ function isWeekend(DaysOfWeek $day): bool {
     return $day === DaysOfWeek::SUNDAY;
 }
 
-isWeekend(DaysOfWeek::MONDAY) ? 'Yes' : 'No';
+echo isWeekend(DaysOfWeek::MONDAY) ? 'Yes' : 'No';

@@ -7,11 +7,12 @@ $largeArray = range(1, 1_000_000);
 $startTime = microtime(true);
 $startMem = memory_get_usage();
 
-$out = [];
-
+// Moidfy the array in-place to save memory
 foreach ($largeArray as &$value) {
-    $out[] = $value * 2;
+    $value = $value * 2;
 }
+// It is critical to unset the reference after the loop to prevent accidental modification of the last element
+unset($value);
 
 $endTime = microtime(true);
 $endMem = memory_get_usage();

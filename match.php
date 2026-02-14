@@ -3,6 +3,8 @@
 // This script demonstrates the use of match expressions in PHP.
 $status = "200";
 
+// Match expressions use strict comparison (===), so type mismatch means no match.
+// That's why we cast to int here since $status is a string.
 $message = match ((int)$status) {
     200 => "OK",
     201 => "Created",

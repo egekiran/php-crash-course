@@ -25,10 +25,12 @@ switch ($size) {
 // This script demonstrates a switch statement for handling bad attempts.
 $badAttempts = 2;
 
+// Switch uses loose comparison (==)
 switch ($badAttempts) {
     case 3:
         echo "You are blocked due to too many bad attempts.\n";
         break;
+    // Fall-through behavior (multiple cases sharing code)
     case 1:
     case 2:
         echo "Bad attempt detected.\n";

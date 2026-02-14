@@ -80,9 +80,10 @@ class CashPaymentProcessor implements PaymentProcessor {
 }
 
 class OrderProcessor {
-    public function __construct(private PaymentProcessor $paymentProcessor) {
-        $this->paymentProcessor = $paymentProcessor;
-    }
+    // Constructor property promotion (PHP 8.0+) automatically initializes the property without explicit assignment
+    public function __construct(
+        private PaymentProcessor $paymentProcessor
+    ) {}
 
     public function processOrder(float | int $amount, string | array $items): void {
         if (is_array($items)) {

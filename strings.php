@@ -3,8 +3,11 @@
 // This code demonstrates different ways to handle strings in PHP, including single quotes, double quotes, heredoc, and nowdoc.
 $name = "John";
 
+// Single quotes do not interpolate variables
 echo 'Hello, $name!\n';
-echo "Hello, $name!\n";
+
+// Double quotes interpolate variables and interpret escape characters
+echo "\nHello, $name!\n";
 
 $heredoc = <<<EOD
 Multi-line string
